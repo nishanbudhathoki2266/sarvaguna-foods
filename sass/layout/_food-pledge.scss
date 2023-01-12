@@ -1,0 +1,26 @@
+.food-pledge {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5rem;
+  align-items: center;
+
+  &__pledges {
+    list-style: none;
+  }
+  &__pledge {
+    font-size: 1.8rem;
+    line-height: 2;
+
+    &::before {
+      content: "✔";
+      color: $color-primary;
+    }
+  }
+
+  &__form {
+    background-color: $color-pale;
+    border-radius: 0.9rem;
+    padding: 6rem 5rem;
+    @include flex;
+  }
+}

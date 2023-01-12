@@ -1,0 +1,73 @@
+// ************ HERO IMAGES ********
+.composition {
+  position: relative;
+
+  &__photo {
+    position: absolute;
+    z-index: 10;
+    width: 60%;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.4);
+    transition: all 0.2s ease;
+    outline-offset: 1rem;
+
+    &--p1 {
+      left: 10%;
+      top: -25rem;
+    }
+
+    &--p2 {
+      right: 0;
+      top: -6rem;
+    }
+
+    &--p3 {
+      right: 40%;
+      top: 4rem;
+    }
+
+    &:hover {
+      outline: 1rem solid $color-primary;
+      transform: scale(1.05) translateY(-0.5rem);
+      box-shadow: 0 2.5rem 4rem rgba($color-black, 0.5);
+      z-index: 20;
+    }
+  }
+
+  &:hover &__photo:not(:hover) {
+    transform: scale(0.95);
+  }
+}
+
+// &__photo {
+//   width: 55%;
+//   box-shadow: 0 1.5rem 4rem rgba($color-black, 0.4);
+//   position: absolute;
+//   z-index: 10;
+//   transition: all 0.2s ease;
+//   outline-offset: 2rem;
+
+//   // &--p1 {
+//   //   left: 20%;
+//   //   top: 2rem;
+//   // }
+
+//   // &--p2 {
+//   //   right: 5%;
+//   //   top: 15rem;
+//   // }
+
+//   // &--p3 {
+//   //   right: 40%;
+//   //   top: 25rem;
+//   // }
+
+//   &:hover {
+//     outline: 1rem solid $color-primary;
+//     transform: scale(1.05) translateY(-0.5rem);
+//     box-shadow: 0 2.5rem 4rem rgba($color-black, 0.5);
+//     z-index: 20;
+//   }
+// }
+// &:hover &__photo:not(:hover) {
+//   transform: scale(0.95);
+// }

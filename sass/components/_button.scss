@@ -1,0 +1,95 @@
+.btn {
+  &,
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.1rem;
+    padding: 1.5rem 3.5rem;
+    display: inline-block;
+    border-radius: 0.9rem;
+    transition: all 0.2s;
+    position: relative;
+    font-size: inherit;
+    border: none;
+    cursor: pointer;
+  }
+
+  &:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+
+  &:active,
+  &:focus {
+    outline: none;
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+  }
+
+  &--primary {
+    background-color: $color-primary;
+    color: $color-white-2;
+
+    &::after {
+      background-color: $color-primary;
+    }
+  }
+
+  &--primary-light {
+    background-color: $color-primary-light;
+    color: $color-white-2;
+
+    &::after {
+      background-color: $color-primary-light;
+    }
+  }
+
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 0.9rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+  }
+}
+
+// OUTLINE BUTTON OR TRANSPARENT BUTTON
+.btn__outline {
+  &,
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.1rem;
+    padding: 1.3rem 3.5rem;
+    display: inline-block;
+    color: $color-primary-light;
+    transition: all 0.2s;
+    font-size: inherit;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+      transform: translateY(-0.4rem);
+    }
+  }
+
+  &--bordered {
+    border-bottom: 0.2rem solid $color-primary-light;
+
+    &:hover {
+      border: none;
+    }
+  }
+}
