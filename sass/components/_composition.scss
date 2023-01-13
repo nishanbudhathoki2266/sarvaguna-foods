@@ -2,6 +2,10 @@
 .composition {
   position: relative;
 
+  @include respond(tab-port) {
+    display: none;
+  }
+
   &__photo {
     position: absolute;
     z-index: 10;
@@ -23,6 +27,10 @@
     &--p3 {
       right: 40%;
       top: 4rem;
+
+      @include respond(tab-land) {
+        top: -1rem;
+      }
     }
 
     &:hover {

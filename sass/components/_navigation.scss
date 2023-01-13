@@ -5,6 +5,10 @@
     list-style: none;
     @include flex;
     gap: 3rem;
+
+    @include respond(tab-land) {
+      gap: 2.8rem;
+    }
   }
 
   &__link {
