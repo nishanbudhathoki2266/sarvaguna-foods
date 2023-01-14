@@ -1,7 +1,7 @@
 .food-pledge {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 5rem;
+  gap: 6rem;
   align-items: center;
 
   @include respond(tab-land) {
@@ -10,6 +10,10 @@
 
   @include respond(tab-port) {
     grid-template-columns: 1fr;
+  }
+
+  @include respond(phone) {
+    row-gap: 3rem;
   }
 
   &__pledges {

@@ -15,28 +15,18 @@
 
 .u-margin-bottom-medium {
   margin-bottom: 6rem !important;
-}
 
-.u-margin-bottom-small {
-  margin-bottom: 3rem !important;
-}
-
-.u-margin-top-big {
-  margin-top: 9rem !important;
-}
-.u-margin-top-medium {
-  margin-top: 6rem !important;
-}
-.u-margin-top-small {
-  margin-top: 3rem !important;
-}
-
-.u-margin-left-small {
-  margin-left: 3rem !important;
+  @include respond(tab-port) {
+    margin-bottom: 4rem !important;
+  }
 }
 
 .container {
   max-width: 120rem;
   padding: 0 3.2rem;
   margin: 0 auto;
+
+  @include respond(phone) {
+    padding: 0 2rem;
+  }
 }

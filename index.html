@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <!-- Font awesome  -->
@@ -21,86 +21,84 @@
     <title>Sarvagun</title>
   </head>
   <body>
-    <!-- Header  -->
-    <header class="header">
-      <a href="#" class="navigation__link logo" style="font-size: 3rem">
-        Sarva<span style="color: #cf711f">guna</span>
-      </a>
-      <nav class="navigation">
-        <ul class="navigation__list">
-          <li><a class="navigation__link" href="#">Home</a></li>
-          <li><a class="navigation__link" href="#">Attas</a></li>
-          <li><a class="navigation__link" href="#">Oils</a></li>
-          <li><a class="navigation__link" href="#">Blog</a></li>
-          <li><a class="navigation__link" href="#">Faqs</a></li>
-          <li><a class="navigation__link" href="#">About us</a></li>
-          <li><a class="navigation__link" href="#">Contact</a></li>
+    <!-- navigation  -->
+    <div class="navigation">
+      <div class="navigation__button">
+        <span class="navigation__toggler"></span>
+        <span class="navigation__toggler"></span>
+        <span class="navigation__toggler"></span>
+      </div>
 
-          <div class="navigation__authentication">
-            <li>
-              <a class="navigation__link navigation__link--btn" href="#"
-                >Log In</a
-              >
-            </li>
-            <li>
-              <a class="navigation__link navigation__link--btn" href="#"
-                >Sign Up</a
-              >
-            </li>
-          </div>
+      <div class="navigation__background">&nbsp;</div>
+      <nav class="navigation__nav">
+        <ul class="navigation__list">
+          <li class="navigation__item">
+            <a href="#about" class="navigation__link">About Us</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#offerings" class="navigation__link">Offerings</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#products" class="navigation__link">Products</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#pledges" class="navigation__link">Our Pledges</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#take-pledge" class="navigation__link">Take a Pledge</a>
+          </li>
         </ul>
       </nav>
-    </header>
-    <!-- End of header  -->
+    </div>
 
-    <!-- Main content  -->
-    <main>
-      <!-- Hero section  -->
-      <section class="section-hero">
-        <div class="hero">
-          <div class="hero__text-box">
-            <h1 class="heading-primary">
-              A nutritious meal delivered to your plate, every single day
-            </h1>
-            <p class="hero__description">
-              All locally sustained, nutritious, and healthful foods, leaving
-              you feel fantastic. Tailored to your personal tastes and
-              nutritional needs.
-            </p>
-            <a href="#" class="btn btn--primary">Take a Pledge</a>
-            <a
-              href="#"
-              class="btn__outline btn__outline--bordered u-margin-left-small"
-              >Know More <span>↓</span></a
-            >
-            <p class="hero__pledge-note u-margin-top-small">
-              On every pledge and product you'd buy, we allocate 10% of its
-              profits to farmer’s grow regenerative practices and will deliver
-              good food to government school’s childrens.
-            </p>
-          </div>
-          <div class="composition">
-            <img
-              src="./img/oil-hero.jpg"
-              class="composition__photo composition__photo--p1"
-            />
-            <img
-              src="./img/roti-hero.jpg"
-              class="composition__photo composition__photo--p2"
-            />
-            <img
-              src="./img/girl-hero.jpg"
-              class="composition__photo composition__photo--p3"
-            />
-          </div>
+    <!-- Hero section - Header  -->
+    <header class="header" id="home">
+      <div class="logo-box">
+        <img src="./img/sarvaguna-logo.png" class="logo" alt="Sarvaguna Logo" />
+      </div>
+      <div class="hero">
+        <div class="hero__text-box">
+          <h1 class="heading-primary">
+            A nutritious meal delivered to your plate, every single day
+          </h1>
+          <p class="hero__description">
+            All locally sustained, nutritious, and healthful foods, leaving you
+            feel fantastic. Tailored to your personal tastes and nutritional
+            needs.
+          </p>
+          <a href="#take-pledge" class="btn btn--primary">Take a Pledge</a>
+          <a href="#about" class="btn__outline btn__outline--bordered"
+            >Know More <span>↓</span></a
+          >
+          <p class="hero__pledge-note u-margin-top-small">
+            On every pledge and product you'd buy, we allocate 10% of its
+            profits to farmer’s grow regenerative practices and will deliver
+            good food to government school’s childrens.
+          </p>
         </div>
-      </section>
+        <div class="composition">
+          <img
+            src="./img/oil-hero.jpg"
+            class="composition__photo composition__photo--p1"
+          />
+          <img
+            src="./img/roti-hero.jpg"
+            class="composition__photo composition__photo--p2"
+          />
+          <img
+            src="./img/girl-hero.jpg"
+            class="composition__photo composition__photo--p3"
+          />
+        </div>
+      </div>
+    </header>
 
+    <main>
       <!-- About Us section -->
-      <section class="section-about">
+      <section id="about" class="section-about">
         <div class="container u-center-text">
           <span class="subheading">About us</span>
-          <h2 class="heading-secondary u-margin-bottom-big">
+          <h2 class="heading-secondary u-margin-bottom-medium">
             Welcome to Sarvaguna
           </h2>
           <p class="description">
@@ -124,7 +122,7 @@
       </section>
 
       <!-- Our Offerings  -->
-      <section class="section-offerings">
+      <section id="offerings" class="section-offerings">
         <div class="container u-left-text">
           <span class="subheading">What we offer</span>
           <h2 class="heading-secondary u-margin-bottom-medium">
@@ -208,10 +206,10 @@
       <!-- END OF OFFFERINGS  -->
 
       <!-- Our Products sections  -->
-      <section class="section-products">
+      <section id="products" class="section-products">
         <div class="container u-center-text">
           <span class="subheading">Our Products</span>
-          <h2 class="heading-secondary u-margin-bottom-big">
+          <h2 class="heading-secondary u-margin-bottom-medium">
             Take a look at our products
           </h2>
         </div>
@@ -232,9 +230,7 @@
                 <li class="card__description">Farmers sourced</li>
                 <li class="card__description">100% Natural</li>
               </ul>
-              <a href="#" class="btn btn--primary u-margin-top-small"
-                >Have Yours</a
-              >
+              <a href="#" class="btn btn--primary">Have Yours</a>
             </div>
           </div>
 
@@ -252,9 +248,7 @@
                 <li class="card__description">Preserved Nutrients</li>
                 <li class="card__description">100% Natural</li>
               </ul>
-              <a href="#" class="btn btn--primary u-margin-top-small"
-                >Have Yours</a
-              >
+              <a href="#" class="btn btn--primary">Have Yours</a>
             </div>
           </div>
 
@@ -273,9 +267,7 @@
                 <li class="card__description">Sarvaguna flours used</li>
                 <li class="card__description">Freshly baked everyday</li>
               </ul>
-              <a href="#" class="btn btn--primary u-margin-top-small"
-                >Have Yours</a
-              >
+              <a href="#" class="btn btn--primary">Have Yours</a>
             </div>
           </div>
         </div>
@@ -287,10 +279,10 @@
       <!-- End of products section  -->
 
       <!-- Our Pledges section  -->
-      <section class="section-pledges">
+      <section id="pledges" class="section-pledges">
         <div class="container u-left-text">
           <span class="subheading">Our Pledge</span>
-          <h2 class="heading-secondary u-margin-bottom-big">
+          <h2 class="heading-secondary u-margin-bottom-medium">
             We are committed to the food that is
           </h2>
         </div>
@@ -352,10 +344,10 @@
       <!-- End of Pledges section  -->
 
       <!-- Take a pledge (form) section  -->
-      <section class="section-food-pledge">
+      <section id="take-pledge" class="section-food-pledge">
         <div class="container u-center-text">
           <span class="subheading">Good food Pledge</span>
-          <h2 class="heading-secondary u-margin-bottom-big">
+          <h2 class="heading-secondary u-margin-bottom-medium">
             Take Your pledge with us
           </h2>
         </div>
@@ -463,8 +455,8 @@
               </li>
             </ul>
             <p class="footer__copyright-text">
-              Copyright &copy; 2023 by Sarvaguna Foods & Kitched Pvt. Ltd. All
-              rights reserved
+              Copyright &copy; <span class="copyright-year"></span> by Sarvaguna
+              Foods & Kitched Pvt. Ltd. All rights reserved
             </p>
           </div>
 
