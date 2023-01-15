@@ -7,9 +7,43 @@ const [navToggOne, navToggTwo, navToggThree] = document.querySelectorAll('.navig
 const navLinks = document.querySelector('.navigation__list');
 const copyrightYear = document.querySelector('.copyright-year');
 
+
+const btnAllProducts = document.querySelector('.btn-all-products');
+const btnBackToHome = document.querySelector('.back-to-home');
+const sectionHeader = document.querySelector('.header');
+const sectionMain = document.querySelector('main');
+const sectionAllProducts = document.querySelector('.section-all-products');
+
+
 // some state variables 
 let navToggled = false;
+let allProductsToggled = false;
 
+
+// See all products button functionality
+
+// toggle all products function 
+const toggleAllProducts = () => {
+    sectionHeader.classList.toggle('u-none-display');
+    sectionMain.classList.toggle('u-none-display');
+}
+
+btnAllProducts.addEventListener('click', function (e) {
+    e.preventDefault();
+    toggleAllProducts();
+    sectionAllProducts.classList.remove('u-none-display');
+    allProductsToggled = true;
+    window.scrollTo(sectionAllProducts, { behavior: 'smooth' });
+});
+
+// Go back to home button 
+btnBackToHome.addEventListener('click', function (e) {
+    e.preventDefault();
+    toggleAllProducts();
+    sectionAllProducts.classList.add('u-none-display');
+    allProductsToggled = false;
+    window.scrollTo(sectionHeader, { behavior: 'smooth' });
+});
 
 // Navigation pop up 
 
@@ -68,6 +102,13 @@ navLinks.addEventListener('click', function (e) {
 
 
     const navigationSection = document.querySelector(navigateTo);
+
+    if (allProductsToggled) {
+        toggleAllProducts();
+        sectionAllProducts.classList.add('u-none-display');
+        allProductsToggled = false;
+    }
+
     navigationSection.scrollIntoView({ behavior: 'smooth' });
 
 });
@@ -78,68 +119,41 @@ const year = new Date();
 
 copyrightYear.textContent = year.getFullYear();
 
-// // Variables
-// const navLinks = document.querySelector('.navigation__list');
-// const navLinksSiblings = document.querySelectorAll('.navigation__link');
 
-// const header = document.querySelector('.header');
-// const navHeight = getComputedStyle(header).height;
-// const sectionHome = document.querySelector('#home');
-// const sectionAbout = document.querySelector('#about');
+// Tabbed components of all products
 
-// // Buttons smooth scrolling
+const allProducts = document.querySelector('.all-products');
+const allProductsContainer = document.querySelector('.all-products__tab-container');
+const allProductsContents = document.querySelectorAll('.all-products__content');
 
 
-// // Navigation and smooth scrolling
-// navLinks.addEventListener('click', function (e) {
-//     e.preventDefault();
+allProductsContainer.addEventListener('click', function (e) {
 
-//     const eventPropagator = e.target;
+    if (e.target !== e.currentTarget) {
+        const propagator = e.target.closest('.all-products__tab');
+        const propagatorSiblings = [...propagator.parentElement.children];
 
-//     if (eventPropagator !== this) {
-//         const navigateTo = eventPropagator.getAttribute('href');
+        if (!propagator.classList.contains('all-products__tab--active')) {
+            propagator.classList.add('all-products__tab--active');
 
-//         // if no #links then do nothing
-//         if (navigateTo === '#') return;
+            propagatorSiblings.forEach(propagatorSibling => {
+                if (propagator !== propagatorSibling) {
+                    propagatorSibling.classList.remove('all-products__tab--active');
+                }
+            });
+        }
 
-//         // For showing the active links
-//         navLinksSiblings.forEach(navLinkSibling => {
-//             if (eventPropagator === navLinkSibling) {
-//                 eventPropagator.style.color = '#cf711f';
-//             }
+        const allProductsContentToShow = document.querySelector(`.all-products__content--${propagator.dataset.tab}`);
 
-//             if (eventPropagator !== navLinkSibling) {
-//                 navLinkSibling.style.color = '#333';
-//             }
+        allProductsContents.forEach(allProductContent => {
+            if (allProductContent !== allProductsContentToShow) {
+                allProductContent.classList.remove('all-products__content--active');
+            }
+        });
+        allProductsContentToShow.classList.add('all-products__content--active');
 
-//         })
-//         const navigationSection = document.querySelector(navigateTo);
-//         navigationSection.scrollIntoView({ behavior: 'smooth' });
-//     }
-// });
+        // console.log(propagator);
+    }
 
 
-// // Making navigation fixed after a section
-
-// const headerObserver = new IntersectionObserver(function (entries) {
-//     const [entry] = entries;
-
-//     if (!entry.isIntersecting) {
-//         header.classList.add('header__sticky');
-//     }
-
-//     if (entry.isIntersecting) {
-//         header.classList.remove('header__sticky');
-//     }
-
-// }, {
-//     root: null,
-//     threshold: 0,
-//     rootMargin: `-${navHeight}`
-// });
-
-// headerObserver.observe(sectionHome);
-
-// // console.log(navHeight);
-
-// // header__sticky
+});

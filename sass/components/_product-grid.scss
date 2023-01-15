@@ -1,0 +1,38 @@
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  grid-column-gap: 3rem;
+  grid-row-gap: 6rem;
+
+  @include respond(tab-land) {
+    grid-row-gap: 4rem;
+  }
+
+  @include respond(tab-port) {
+    grid-template-columns: 2fr 2fr;
+  }
+
+  @include respond(phone) {
+    grid-template-columns: 1fr;
+    row-gap: 3rem;
+  }
+
+  &__heading {
+    font-size: 1.6rem;
+    letter-spacing: 0.15rem;
+  }
+
+  &__price-desc {
+    font-size: 1.4rem;
+  }
+
+  &__product-desc {
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
+
+  &__img {
+    width: 100%;
+  }
+}
