@@ -17,7 +17,15 @@
   }
 
   .logo {
-    width: 8%;
+    width: 10%;
+
+    @include respond(tab-sm) {
+      width: 15%;
+    }
+
+    @include respond(phone) {
+      width: 20%;
+    }
   }
 }
 
