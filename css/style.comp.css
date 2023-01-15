@@ -99,6 +99,12 @@ body {
 .u-left-text {
   text-align: left !important; }
 
+.u-margin-bottom-small {
+  margin-bottom: 3rem !important; }
+  @media only screen and (max-width: 56.25em) {
+    .u-margin-bottom-small {
+      margin-bottom: 1.5rem !important; } }
+
 .u-margin-top-medium {
   margin-top: 6rem !important; }
   @media only screen and (max-width: 56.25em) {
@@ -419,7 +425,13 @@ body {
     .logo-box {
       max-width: 120rem; } }
   .logo-box .logo {
-    width: 8%; }
+    width: 10%; }
+    @media only screen and (max-width: 44em) {
+      .logo-box .logo {
+        width: 15%; } }
+    @media only screen and (max-width: 37.5em) {
+      .logo-box .logo {
+        width: 20%; } }
 
 .hero {
   position: relative;
